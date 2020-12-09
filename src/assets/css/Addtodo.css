@@ -1,0 +1,12 @@
+.addtodo {
+    border: 1px solid black;
+    padding: 50px;
+    border-radius: 50px;
+    font-size: 50px;
+    width: 10%;
+    height: 5%;
+    text-align: center;
+    z-index: 999;
+    position: relative;
+    
+}
