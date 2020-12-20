@@ -19,6 +19,14 @@
     -moz-box-shadow: 0px 0px 27px -1px rgba(0, 0, 0, 0.34);
 }
 
+.note:hover {
+    opacity: 0.2;
+    box-shadow: 0px 0px 27px -1px rgb(255, 0, 0);
+    -webkit-box-shadow: 0px 0px 27px -1px rgb(255, 0, 0);
+    -moz-box-shadow: 0px 0px 27px -1px rgb(255, 0, 0);
+    cursor: pointer;
+}
+
 .note h1 {
     font-weight: bold;
     padding-bottom: 10px;

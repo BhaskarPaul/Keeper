@@ -1,12 +1,40 @@
 .addtodo {
-    border: 1px solid black;
-    padding: 50px;
-    border-radius: 50px;
-    font-size: 50px;
-    width: 10%;
-    height: 5%;
     text-align: center;
-    z-index: 999;
-    position: relative;
-    
+    border: 1px solid transparent;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+    width: 98%;
+    height: 30%;
+    box-shadow: 0px 0px 27px -1px rgba(0, 0, 0, 0.34);
+    -webkit-box-shadow: 0px 0px 27px -1px rgba(0, 0, 0, 0.34);
+    -moz-box-shadow: 0px 0px 27px -1px rgba(0, 0, 0, 0.34);
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.addtodo span {
+    font-size: 30px;
+    opacity: 0.5;
+}
+
+.addtodo button {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
+
+.addtodo button {
+    border: 1px solid black;
+    border-radius: 50px;
+    height: 40px;
+    width: 40px;
+    border: none;
+    box-shadow: 0px 0px 27px -1px rgba(0, 0, 0, 0.34);
+    -webkit-box-shadow: 0px 0px 27px -1px rgba(0, 0, 0, 0.34);
+    -moz-box-shadow: 0px 0px 27px -1px rgba(0, 0, 0, 0.34);
 }

@@ -20,8 +20,10 @@ function Footer() {
 
     const date = new Date();
     const Month = Months[date.getMonth()];
-    const day = date.getDay();
+    const day = date.getDate();
     const year = date.getFullYear();
+
+    // console.log(day);
 
     return (
         <div className="footer">
