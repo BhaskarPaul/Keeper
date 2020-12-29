@@ -4,35 +4,40 @@ import "./App.css";
 import Footer from "./assets/components/Footer";
 import Note from "./assets/components/Note";
 import Addtodo from "./assets/components/Addtodo";
-
-var notes = [];
+import { useEffect } from "react";
 
 function App() {
     const [heading, setHeading] = useState("");
     const [content, setContent] = useState("");
-    const [del, setDel] = useState(null);
+    const [viewNote, setViewNote] = useState(false);
+    const [notes, setNotes] = useState([]);
+    // const [display, setDisplay] = useState(null);
 
-    if (heading !== "" && content !== "") {
-        notes.unshift({ title: heading, content: content });
-    }
-    // const len = notes.length;
+    // useEffect(() => {
+    //     if (notes.length == 0) {
+    //         setDisplay(false);
+    //     }
+    // });
 
-    console.log(del);
+    useEffect(() => {
+        setNotes([...notes, { title: heading, content: content }]);
+    }, [heading, content]);
 
     return (
         <div className="App">
             <Header />
             <div className="note-main">
-                {notes.map((v, i) => {
-                    if (i % 2 == 0) {
-                        return (
-                            <Note
-                                title={v.title}
-                                content={v.content}
-                                id={i / 2}
-                            />
-                        );
-                    }
+                {notes.filter((value, idx) => (idx >= 1)).reverse().map((v, i) => {
+                    return (
+                        <Note
+                            key={i}
+                            id={i}
+                            content={v.content}
+                            title={v.title}
+                            viewNote={viewNote}
+                            setViewNote={setViewNote}
+                        />
+                    );
                 })}
             </div>
             <div className="todo">

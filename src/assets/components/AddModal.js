@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "../css/AddModal.css";
+import { Button } from "@material-ui/core";
 
-function AddModal({ heading, setHeading,content, setContent }) {
+function AddModal({ heading, setHeading, content, setContent }) {
     // for title
     const [name, setName] = useState("");
 
@@ -17,7 +18,7 @@ function AddModal({ heading, setHeading,content, setContent }) {
         setName("");
         setContent(des);
         setDes("");
-        event.preventDefault();
+        // event.preventDefault();
     }
 
     function handleChangeDes(event) {
@@ -37,7 +38,11 @@ function AddModal({ heading, setHeading,content, setContent }) {
                     value={des}
                     onChange={handleChangeDes}
                 />
-                <button type="submit">Submit</button>
+                <div className="btn">
+                    <Button variant='contained' size='large' onClick={() => handleSubmit()}>
+                        <span className='btn-text'>Submit</span>
+                    </Button>
+                </div>
             </form>
         </div>
     );

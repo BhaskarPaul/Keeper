@@ -17,13 +17,18 @@
     box-shadow: 0px 0px 27px -1px rgba(0, 0, 0, 0.34);
     -webkit-box-shadow: 0px 0px 27px -1px rgba(0, 0, 0, 0.34);
     -moz-box-shadow: 0px 0px 27px -1px rgba(0, 0, 0, 0.34);
+    transition: 1s;
+}
+
+.note-disp {
+    display: none;
 }
 
 .note:hover {
     opacity: 0.2;
-    box-shadow: 0px 0px 27px -1px rgb(255, 0, 0);
+    /* box-shadow: 0px 0px 27px -1px rgb(255, 0, 0);
     -webkit-box-shadow: 0px 0px 27px -1px rgb(255, 0, 0);
-    -moz-box-shadow: 0px 0px 27px -1px rgb(255, 0, 0);
+    -moz-box-shadow: 0px 0px 27px -1px rgb(255, 0, 0); */
     cursor: pointer;
 }
 
@@ -41,4 +46,9 @@
     -moz-box-shadow: 0px 0px 27px -1px rgba(0, 0, 0, 0.34); */
     padding: 10px;
     opacity: 0.8;
+}
+
+.note .data-added {
+    opacity: 0.5;
+    font-size: 10px;
 }

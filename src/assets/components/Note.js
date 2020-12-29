@@ -1,11 +1,22 @@
 import "../css/Note.css";
-import React from "react";
+import React, {useState} from "react";
 
-function Note({ id, content, title, del }) {
+function Note({ id, content, title, viewNote, setViewNote }) {
+    const [view, setView] = useState("note");
+
+    const sign = "";
+
+    // setViewNote(view === "note" ? false : true);
+    // if (view === 'note') {
+    //     setViewNote(false);
+    // } else {
+    //     setViewNote(true);
+    // }
+
     return (
-        <div className="note" onClick={() => (del = id)}>
+        <div className={view} onClick={() => setView("note-disp")}>
             <h1>
-                {id + 1}. {title}
+                {sign} {title}
             </h1>
             <p>{content}</p>
         </div>
