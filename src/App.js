@@ -6,10 +6,10 @@ import Note from "./assets/components/Note";
 import Addtodo from "./assets/components/Addtodo";
 import { useEffect } from "react";
 
-function App() {
+const App = () => {
     const [heading, setHeading] = useState("");
     const [content, setContent] = useState("");
-    const [viewNote, setViewNote] = useState(false);
+    const [remove, setRemove] = useState(null);
     const [notes, setNotes] = useState([]);
     // const [display, setDisplay] = useState(null);
 
@@ -23,34 +23,75 @@ function App() {
         setNotes([...notes, { title: heading, content: content }]);
     }, [heading, content]);
 
-    return (
-        <div className="App">
-            <Header />
-            <div className="note-main">
-                {notes.filter((value, idx) => (idx >= 1)).reverse().map((v, i) => {
-                    return (
-                        <Note
-                            key={i}
-                            id={i}
-                            content={v.content}
-                            title={v.title}
-                            viewNote={viewNote}
-                            setViewNote={setViewNote}
-                        />
-                    );
-                })}
+    // console.log(notes);
+    // console.log(typeof notes);
+
+    /*
+    taken from: https://stackoverflow.com/questions/50168088/how-to-delete-element-onclick-in-reactjs
+    */
+
+    const triggerDelete = (index) => {
+        if (window.confirm("Are you sure you want to delete?")) {
+            setNotes((prevNotes) => [
+                ...prevNotes.slice(0, index),
+                ...prevNotes.slice(index),
+            ]);
+        }
+    };
+
+    const whenBlank = () => {
+        return (
+            <div className="App">
+                <h1>Hover and click notes to delete</h1>
             </div>
-            <div className="todo">
-                <Addtodo
-                    heading={heading}
-                    setHeading={setHeading}
-                    content={content}
-                    setContent={setContent}
-                />
+        );
+    };
+
+    let Notes = [...notes];
+
+    if (Notes.length == 0) {
+        return whenBlank();
+    } else {
+        return (
+            <div className="App">
+                <Header />
+                <div
+                    className="note-main"
+                    onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        triggerDelete(remove);
+                    }}
+                >
+                    {notes
+                        .filter((v, i) => i >= 1)
+                        .map((v, i) => {
+                            return (
+                                <div>
+                                    <Note
+                                        key={i}
+                                        id={i}
+                                        content={v.content}
+                                        title={v.title}
+                                        remove={remove}
+                                        setRemove={setRemove}
+                                    />
+                                </div>
+                            );
+                        })}
+                </div>
+                <div className="todo">
+                    <Addtodo
+                        heading={heading}
+                        setHeading={setHeading}
+                        content={content}
+                        setContent={setContent}
+                    />
+                </div>
+                <Footer />
             </div>
-            <Footer />
-        </div>
-    );
-}
+        );
+    }
+};
 
 export default App;
