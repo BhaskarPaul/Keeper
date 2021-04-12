@@ -8,11 +8,11 @@
 .add-modal-form input {
     margin-bottom: 10px;
     padding: 10px;
-    border: none;
+    border: 1px solid gray;
     border-radius: 10px;
-    box-shadow: 0px 0px 27px -1px rgba(0, 0, 0, 0.34);
+    /* box-shadow: 0px 0px 27px -1px rgba(0, 0, 0, 0.34);
     -webkit-box-shadow: 0px 0px 27px -1px rgba(0, 0, 0, 0.34);
-    -moz-box-shadow: 0px 0px 27px -1px rgba(0, 0, 0, 0.34);
+    -moz-box-shadow: 0px 0px 27px -1px rgba(0, 0, 0, 0.34); */
 }
 
 .add-modal-form input:focus {
@@ -22,11 +22,11 @@
 .add-modal-form textarea {
     resize: none;
     padding: 10px;
-    border: none;
+    border: 1px solid gray;
     border-radius: 10px;
-    box-shadow: 0px 0px 27px -1px rgba(0, 0, 0, 0.34);
+    /* box-shadow: 0px 0px 27px -1px rgba(0, 0, 0, 0.34);
     -webkit-box-shadow: 0px 0px 27px -1px rgba(0, 0, 0, 0.34);
-    -moz-box-shadow: 0px 0px 27px -1px rgba(0, 0, 0, 0.34);
+    -moz-box-shadow: 0px 0px 27px -1px rgba(0, 0, 0, 0.34); */
     margin-bottom: 20px;
 }
 

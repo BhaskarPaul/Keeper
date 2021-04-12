@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../css/Addtodo.css";
 import AddModal from "./AddModal";
 
@@ -10,14 +10,14 @@ function Addtodo({ heading, setHeading, content, setContent }) {
     const handleModal = () => {
         if (sign === " + ") {
             setModal(true);
-            setSign(" x ");
-            setDes("Close ");
         } else {
             setModal(false);
-            setSign(" + ");
-            setDes("Click here to add new ");
         }
     };
+
+    // useEffect(() => {
+    //     handleModal();
+    // }, [modal, setModal]);
 
     return (
         <div className="addtodo">
@@ -27,6 +27,8 @@ function Addtodo({ heading, setHeading, content, setContent }) {
                     setHeading={setHeading}
                     content={content}
                     setContent={setContent}
+                    modal={modal}
+                    setModal={setModal}
                 />
             )}
             <span>{des} </span>

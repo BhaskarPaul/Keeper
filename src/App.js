@@ -31,7 +31,10 @@ const App = () => {
     */
 
     const triggerDelete = (index) => {
-        if (window.confirm("Are you sure you want to delete?")) {
+        if (
+            notes.length > 1 &&
+            window.confirm(`Are you sure you want to delete ? `)
+        ) {
             setNotes((prevNotes) => [
                 ...prevNotes.slice(0, index),
                 ...prevNotes.slice(index),
