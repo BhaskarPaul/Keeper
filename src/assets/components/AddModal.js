@@ -64,12 +64,12 @@ function AddModal({
             <div>
                 <form className="add-modal-form" onSubmit={handleSubmit}>
                     <input
-                        placeholder="Enter title"
+                        placeholder="Enter title ... "
                         value={name}
                         onChange={handleChange}
                     />
                     <textarea
-                        placeholder="Enter details"
+                        placeholder="Enter details ... "
                         value={des}
                         onChange={handleChangeDes}
                     />
@@ -78,6 +78,11 @@ function AddModal({
                             variant="contained"
                             size="large"
                             onClick={() => handleSubmit()}
+                            style={{
+                                backgroundColor: "yellow",
+                                color: "black",
+                                fontWeight: "900",
+                            }}
                         >
                             <span className="btn-text">Keep</span>
                         </Button>

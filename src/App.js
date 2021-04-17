@@ -11,7 +11,6 @@ import { ScaleLoader } from "react-spinners";
 const App = () => {
     const [heading, setHeading] = useState("");
     const [content, setContent] = useState("");
-    const [remove, setRemove] = useState(null);
     const [notes, setNotes] = useState([]);
 
     const triggerDelete = (index) => {
@@ -35,7 +34,8 @@ const App = () => {
     const whenBlank = () => {
         return (
             <div className="loader">
-                <ScaleLoader color="yellow"/>
+                <ScaleLoader color="yellow" />
+                <h1 style={{ color: "gray" }}>Add new keeps ... </h1>
             </div>
         );
     };
@@ -54,11 +54,8 @@ const App = () => {
                                         onClick={() => triggerDelete(note._id)}
                                     >
                                         <Note
-                                            id={idx}
                                             content={note.content}
                                             title={note.title}
-                                            remove={remove}
-                                            setRemove={setRemove}
                                         />
                                     </div>
                                 );

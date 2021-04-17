@@ -1,16 +1,9 @@
 import "../css/Note.css";
 import React, { useState } from "react";
 
-function Note({ id, content, title, remove, setRemove }) {
-    const [view, setView] = useState("note");
-
-    const handleClick = () => {
-        setView("note-disp");
-        setRemove(id);
-    };
-
+function Note({ content, title }) {
     return (
-        <div className={view} onClick={handleClick}>
+        <div className="note">
             <h1>
                 {""} {title}
             </h1>
