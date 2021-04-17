@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "../css/AddModal.css";
+import axios from "axios";
 import { Button } from "@material-ui/core";
+import { API } from "../../private/api";
 import Modal from "react-modal";
 
 Modal.setAppElement("#root");
@@ -25,8 +27,14 @@ function AddModal({
 
     function handleSubmit(event) {
         setHeading(name);
-        setName("");
         setContent(des);
+
+        axios
+            .post(`${API}addKeep`, { title: name, content: des })
+            .then((response) => console.log(response.data))
+            .catch((err) => console.log(err));
+
+        setName("");
         setDes("");
         setModal(false);
         // event.preventDefault();
@@ -62,7 +70,7 @@ function AddModal({
                     <textarea
                         placeholder="Enter details"
                         value={des}
-                        onChange={handleChangeDes}  
+                        onChange={handleChangeDes}
                     />
                     <div className="btn">
                         <Button

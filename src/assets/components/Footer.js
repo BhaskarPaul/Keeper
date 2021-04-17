@@ -28,10 +28,10 @@ function Footer() {
     return (
         <div className="footer">
             <p>Copyright © {new Date().getFullYear()}</p>
-            <div className="day-details">
+            <p className="me">Made with 💛 by Bhaskar</p>
+            <div className="day-details" style={{ fontWeight: "900" }}>
                 <TimeNow month={Month} day={day} year={year} />
             </div>
-            <p className="me">Made with 💛 by Bhaskar</p>
         </div>
     );
 }

@@ -8,3 +8,9 @@
 .App .note-main {
     min-height: 40vh;
 }
+
+.loader {
+    display: grid;
+    min-height: 45vh;
+    place-items: center;
+}
