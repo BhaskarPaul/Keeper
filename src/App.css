@@ -3,10 +3,14 @@
     box-sizing: border-box;
     padding: 10px;
     min-height: 100vh;
+    background-color: #1c1c1c;
 }
 
 .App .note-main {
-    min-height: 40vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    min-height: 50vh;
 }
 
 .loader {

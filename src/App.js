@@ -15,10 +15,12 @@ const App = () => {
     const [notes, setNotes] = useState([]);
 
     const triggerDelete = (index) => {
-        axios
-            .delete(`${API}deleteKeep/${index}`)
-            .then((response) => console.log(response))
-            .catch((err) => console.log(err));
+        if (window.confirm("Do you want to delete this keep ?")) {
+            axios
+                .delete(`${API}deleteKeep/${index}`)
+                .then((response) => console.log(response))
+                .catch((err) => console.log(err));
+        }
     };
 
     useEffect(() => {
@@ -28,12 +30,12 @@ const App = () => {
             .catch((err) => console.log(err));
 
         return () => whenBlank();
-    }, [notes, setNotes, heading, setHeading, content, setContent]);
+    }, [notes, setNotes]);
 
     const whenBlank = () => {
         return (
             <div className="loader">
-                <ScaleLoader />
+                <ScaleLoader color="yellow"/>
             </div>
         );
     };

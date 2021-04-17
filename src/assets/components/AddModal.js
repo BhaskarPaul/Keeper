@@ -54,9 +54,10 @@ function AddModal({
                     border: `none`,
                     boxShadow: `rgba(100, 100, 111, 0.2) 0px 7px 29px 0px`,
                     height: "50vh",
+                    backgroundColor: `black`,
                 },
                 overlay: {
-                    backgroundColor: `rgba(255, 255, 255, 0.9)`,
+                    backgroundColor: `rgba(1, 1, 1, 0.5)`,
                 },
             }}
         >
